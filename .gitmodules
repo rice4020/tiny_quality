@@ -1,0 +1,3 @@
+[submodule "tiny_quality/vendor/spdlog"]
+	path = tiny_quality/vendor/spdlog
+	url = https://github.com/gabime/spdlog

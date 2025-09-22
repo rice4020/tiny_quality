@@ -27,9 +27,15 @@
     <ClInclude Include="src\tiny_quality\EntryPoint.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="src\tiny_quality\Log.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\tiny_quality\Application.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\Log.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
