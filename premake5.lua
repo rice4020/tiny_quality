@@ -1,0 +1,87 @@
+workspace "tiny_quality"
+	architecture "x64"
+
+	configurations { 
+		"Debug",
+		"Release",
+		"Dist" 
+	}
+
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+project "tiny_quality"
+	location "tiny_quality"
+	kind "SharedLib"
+	language "C++"
+
+	targetdir("bin/" .. outputdir .. "/%{prj.name}")
+	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files{ 
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+	includedirs { "%{prj.name}/vendor/spdlog/include" }
+
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "10.0.26100.0"
+
+		defines { 
+			"TQ_PLATFORM_WINDOWS",
+			"TQ_BUILD_DLL"
+		}
+
+		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") }
+	
+	filter "configurations:Debug"
+		defines "TQ_DEBUG"
+		symbols "On"
+
+	filter "configurations:Release"
+		defines "TQ_RELEASE"
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "TQ_DIST"
+		optimize "On"
+
+project "Sandbox"
+	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+
+	targetdir("bin/" .. outputdir .. "/%{prj.name}")
+	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files{ 
+		"%{prj.name}/src/**.h", 
+		"%{prj.name}/src/**.cpp"
+	}
+	includedirs { 
+		"tiny_quality/vendor/spdlog/include", 
+		"tiny_quality/src" 
+	}
+	links{
+		"tiny_quality"
+	}
+
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "10.0.26100.0"
+
+		defines { "TQ_PLATFORM_WINDOWS"	}
+	
+	filter "configurations:Debug"
+		defines "TQ_DEBUG"
+		symbols "On"
+
+	filter "configurations:Release"
+		defines "TQ_RELEASE"
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "TQ_DIST"
+		optimize "On"
