@@ -21,12 +21,15 @@ project "tiny_quality"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
-	includedirs { "%{prj.name}/vendor/spdlog/include" }
+	includedirs { 
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include"
+	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.26100.0"
+		systemversion "latest"
 
 		defines { 
 			"TQ_PLATFORM_WINDOWS",
@@ -70,7 +73,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.26100.0"
+		systemversion "latest"
 
 		defines { "TQ_PLATFORM_WINDOWS"	}
 	
