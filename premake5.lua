@@ -17,6 +17,9 @@ project "tiny_quality"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "tqpch.h"
+	pchsource "tiny_quality/src/tqpch.cpp"
+
 	files{ 
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"

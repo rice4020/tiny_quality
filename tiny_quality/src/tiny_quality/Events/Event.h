@@ -2,9 +2,6 @@
 
 #include "tiny_quality//Core.h"
 
-#include <string>
-#include <functional>
-
 namespace tiny_quality {
 
 	enum class EventType

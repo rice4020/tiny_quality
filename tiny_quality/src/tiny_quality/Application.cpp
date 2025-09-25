@@ -1,3 +1,4 @@
+#include "tqpch.h"
 #include "Application.h"
 
 #include "tiny_quality/Events/ApplicationEvent.h"

@@ -34,6 +34,7 @@
     <ClInclude Include="src\tiny_quality\Log.h">
       <Filter>tiny_quality</Filter>
     </ClInclude>
+    <ClInclude Include="src\tqpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\tiny_quality\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\tiny_quality\Log.cpp">
       <Filter>tiny_quality</Filter>
     </ClCompile>
+    <ClCompile Include="src\tqpch.cpp" />
   </ItemGroup>
 </Project>

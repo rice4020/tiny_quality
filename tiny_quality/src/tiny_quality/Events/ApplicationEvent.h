@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace tiny_quality {
 
 	class TINY_QUALITY_API WindowResizeEvent : public Event
