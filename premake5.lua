@@ -9,6 +9,11 @@ workspace "tiny_quality"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "tiny_quality/vendor/GLFW/include"
+
+include "tiny_quality/vendor/GLFW"
+
 project "tiny_quality"
 	location "tiny_quality"
 	kind "SharedLib"
@@ -26,7 +31,13 @@ project "tiny_quality"
 	}
 	includedirs { 
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	links{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"

@@ -1,6 +1,7 @@
 #pragma once
 
-#include "tiny_quality//Core.h"
+#include "tqpch.h"
+#include "tiny_quality/Core.h"
 
 namespace tiny_quality {
 

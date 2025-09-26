@@ -1,3 +1,6 @@
 [submodule "tiny_quality/vendor/spdlog"]
 	path = tiny_quality/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "tiny_quality/vendor/GLFW"]
+	path = tiny_quality/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
