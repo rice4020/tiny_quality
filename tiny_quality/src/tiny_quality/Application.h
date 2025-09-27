@@ -1,10 +1,12 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
-#include "tiny_quality/Events/ApplicationEvent.h"
 
 #include "Window.h"
+#include "tiny_quality/LayerStack.h"
+#include "tiny_quality/Events/Event.h"
+#include "tiny_quality/Events/ApplicationEvent.h"
+
 
 namespace tiny_quality {
 
@@ -16,11 +18,15 @@ namespace tiny_quality {
 
 		void Run();
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Runing = true;
+		LayerStack m_LayerStack;
 	};
 
 	//To be defined in CLIENT
