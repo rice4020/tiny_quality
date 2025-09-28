@@ -3,7 +3,7 @@
 
 #include "tiny_quality/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace tiny_quality {
 

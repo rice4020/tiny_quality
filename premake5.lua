@@ -11,8 +11,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "tiny_quality/vendor/GLFW/include"
+IncludeDir["Glad"] = "tiny_quality/vendor/Glad/include"
 
 include "tiny_quality/vendor/GLFW"
+include "tiny_quality/vendor/Glad"
 
 project "tiny_quality"
 	location "tiny_quality"
@@ -32,10 +34,12 @@ project "tiny_quality"
 	includedirs { 
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	links{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
@@ -47,7 +51,8 @@ project "tiny_quality"
 
 		defines { 
 			"TQ_PLATFORM_WINDOWS",
-			"TQ_BUILD_DLL"
+			"TQ_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") }
