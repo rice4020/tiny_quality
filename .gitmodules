@@ -4,3 +4,6 @@
 [submodule "tiny_quality/vendor/GLFW"]
 	path = tiny_quality/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "tiny_quality/vendor/imgui"]
+	path = tiny_quality/vendor/imgui
+	url = https://github.com/TheCherno/imgui

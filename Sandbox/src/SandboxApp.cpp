@@ -24,6 +24,7 @@ class Sandbox : public tiny_quality::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new tiny_quality::ImGuiLayer());
 	}
 	
 	~Sandbox() {

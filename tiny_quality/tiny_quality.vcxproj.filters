@@ -13,6 +13,9 @@
     <Filter Include="tiny_quality\Events">
       <UniqueIdentifier>{B5964398-21F8-20A6-AA65-675816C65765}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tiny_quality\ImGui">
+      <UniqueIdentifier>{DBC96B33-C7AD-2C89-300E-27DC1C11170B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
@@ -40,6 +43,9 @@
     <ClInclude Include="src\tiny_quality\Events\MouseEvent.h">
       <Filter>tiny_quality\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\tiny_quality\ImGui\ImGuiLayer.h">
+      <Filter>tiny_quality\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\tiny_quality\Layer.h">
       <Filter>tiny_quality</Filter>
     </ClInclude>
@@ -60,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="src\tiny_quality\Application.cpp">
       <Filter>tiny_quality</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\ImGui\ImGuiLayer.cpp">
+      <Filter>tiny_quality\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\tiny_quality\Layer.cpp">
       <Filter>tiny_quality</Filter>
