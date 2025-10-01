@@ -11,6 +11,10 @@
 	#error tiny_quality only support Windows!
 #endif
 
+#ifdef TQ_DEBUG
+	#define TQ_ENABLE_ASSERTS
+#endif
+
 #ifdef TQ_ENABLE_ASSERTS
 #define TQ_ASSERT(x, ...) { if(!(x)) { TQ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #define TQ_CORE_ASSERT(x, ...) { if(!(x)) { TQ_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
