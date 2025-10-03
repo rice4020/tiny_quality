@@ -152,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\tiny_quality.h" />
     <ClInclude Include="src\tiny_quality\Application.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="src\tiny_quality\Events\KeyEvent.h" />
     <ClInclude Include="src\tiny_quality\Events\MouseEvent.h" />
     <ClInclude Include="src\tiny_quality\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\tiny_quality\Input.h" />
     <ClInclude Include="src\tiny_quality\Layer.h" />
     <ClInclude Include="src\tiny_quality\LayerStack.h" />
     <ClInclude Include="src\tiny_quality\Log.h" />
@@ -169,6 +171,7 @@
     <ClInclude Include="src\tqpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\tiny_quality\Application.cpp" />
     <ClCompile Include="src\tiny_quality\ImGui\ImGuiLayer.cpp" />

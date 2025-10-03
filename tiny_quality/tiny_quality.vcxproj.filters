@@ -59,6 +59,8 @@
       <Filter>tiny_quality</Filter>
     </ClInclude>
     <ClInclude Include="src\tqpch.h" />
+    <ClInclude Include="src\tiny_quality\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -80,5 +82,6 @@
       <Filter>tiny_quality</Filter>
     </ClCompile>
     <ClCompile Include="src\tqpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
