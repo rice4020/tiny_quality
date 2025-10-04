@@ -61,6 +61,8 @@
     <ClInclude Include="src\tqpch.h" />
     <ClInclude Include="src\tiny_quality\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\tiny_quality\KeyCodes.h" />
+    <ClInclude Include="src\tiny_quality\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">

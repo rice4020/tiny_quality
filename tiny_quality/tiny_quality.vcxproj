@@ -164,9 +164,11 @@
     <ClInclude Include="src\tiny_quality\Events\MouseEvent.h" />
     <ClInclude Include="src\tiny_quality\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\tiny_quality\Input.h" />
+    <ClInclude Include="src\tiny_quality\KeyCodes.h" />
     <ClInclude Include="src\tiny_quality\Layer.h" />
     <ClInclude Include="src\tiny_quality\LayerStack.h" />
     <ClInclude Include="src\tiny_quality\Log.h" />
+    <ClInclude Include="src\tiny_quality\MouseButtonCodes.h" />
     <ClInclude Include="src\tiny_quality\Window.h" />
     <ClInclude Include="src\tqpch.h" />
   </ItemGroup>

@@ -10,12 +10,18 @@ public:
 
 	void OnUpdate() override
 	{
-		TQ_INFO("ExampleLayer::Update");
+		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_TAB))
+			TQ_TRACE("Tab key is pressed! (poll)!");
 	}
 
 	void OnEvent(tiny_quality::Event& event) override
 	{
-		TQ_TRACE("{0}", event);
+		if (event.GetEventType() == tiny_quality::EventType::KeyPressed) {
+			tiny_quality::KeyPressedEvent& e = (tiny_quality::KeyPressedEvent&)event;
+			if(e.GetKeyCode() == TQ_KEY_TAB)
+				TQ_TRACE("Tab key is pressed! (event)!");
+			TQ_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };

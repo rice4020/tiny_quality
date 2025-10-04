@@ -6,6 +6,10 @@
 #include "tiny_quality/Layer.h"
 #include "tiny_quality/Log.h"
 
+#include "tiny_quality/Input.h"
+#include "tiny_quality/KeyCodes.h"
+#include "tiny_quality/MouseButtonCodes.h"
+
 #include "tiny_quality/ImGui/ImGuiLayer.h"
 
 // ---- Entry Point ----------------
