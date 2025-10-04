@@ -7,3 +7,6 @@
 [submodule "tiny_quality/vendor/imgui"]
 	path = tiny_quality/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "tiny_quality/vendor/glm"]
+	path = tiny_quality/vendor/glm
+	url = https://github.com/g-truc/glm

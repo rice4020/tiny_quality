@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "tiny_quality/vendor/GLFW/include"
 IncludeDir["Glad"] = "tiny_quality/vendor/Glad/include"
 IncludeDir["ImGui"] = "tiny_quality/vendor/imgui"
+IncludeDir["glm"] = "tiny_quality/vendor/glm"
 
 include "tiny_quality/vendor/GLFW"
 include "tiny_quality/vendor/Glad"
@@ -33,14 +34,17 @@ project "tiny_quality"
 
 	files{ 
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 	includedirs { 
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 	links{
 		"GLFW",
@@ -92,7 +96,8 @@ project "Sandbox"
 	}
 	includedirs { 
 		"tiny_quality/vendor/spdlog/include", 
-		"tiny_quality/src" 
+		"tiny_quality/src", 
+		"%{IncludeDir.glm}"
 	}
 	links{
 		"tiny_quality"
