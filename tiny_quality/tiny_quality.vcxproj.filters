@@ -1379,5 +1379,6 @@
     <ClCompile Include="src\tqpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\tiny_quality\ImGui\ImGuiBuild.cpp" />
   </ItemGroup>
 </Project>
