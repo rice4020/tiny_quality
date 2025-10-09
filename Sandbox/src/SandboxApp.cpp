@@ -1,5 +1,7 @@
 #include <tiny_quality.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public tiny_quality::Layer
 {
 public:
@@ -12,6 +14,12 @@ public:
 	{
 		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_TAB))
 			TQ_TRACE("Tab key is pressed! (poll)!");
+	}
+
+	virtual void OnImGuiRender() override {
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(tiny_quality::Event& event) override

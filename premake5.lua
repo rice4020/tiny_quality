@@ -22,9 +22,10 @@ include "tiny_quality/vendor/imgui"
 
 project "tiny_quality"
 	location "tiny_quality"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"	
+	staticruntime "on"
 
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -38,6 +39,11 @@ project "tiny_quality"
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
+
+    defines {
+        "_CRT_SECURE_NO_WARNINGS"
+	}
+
 	includedirs { 
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
@@ -50,12 +56,10 @@ project "tiny_quality"
 		"GLFW",
 		"Glad",
 		"ImGui",
-		"opengl32.lib",
-		"dwmapi.lib"
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines { 
@@ -64,28 +68,27 @@ project "tiny_quality"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands { ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"") }
-	
 	filter "configurations:Debug"
 		defines "TQ_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "TQ_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "TQ_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -97,6 +100,7 @@ project "Sandbox"
 	includedirs { 
 		"tiny_quality/vendor/spdlog/include", 
 		"tiny_quality/src", 
+		"tiny_quality/vendor",
 		"%{IncludeDir.glm}"
 	}
 	links{
@@ -104,7 +108,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines { "TQ_PLATFORM_WINDOWS"	}
@@ -112,14 +115,14 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "TQ_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "TQ_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "TQ_DIST"
 		runtime "Release"		
-		optimize "On"
+		optimize "on"

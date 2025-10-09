@@ -2,11 +2,15 @@
 
 
 #ifdef TQ_PLATFORM_WINDOWS
+#if TQ_DYNAMIC_LINK
 	#ifdef TQ_BUILD_DLL
 		#define TINY_QUALITY_API __declspec(dllexport)
 	#else
 		#define TINY_QUALITY_API __declspec(dllimport)
 	#endif
+#else
+#define TINY_QUALITY_API
+#endif
 #else
 	#error tiny_quality only support Windows!
 #endif
