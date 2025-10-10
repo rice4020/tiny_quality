@@ -1,6 +1,7 @@
 #pragma once
 
 #include "tiny_quality/Window.h"
+#include "tiny_quality/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -28,6 +29,7 @@ namespace tiny_quality {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
