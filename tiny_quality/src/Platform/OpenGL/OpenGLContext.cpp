@@ -17,6 +17,11 @@ namespace tiny_quality {
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		TQ_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		TQ_CORE_INFO("OpenGL info : ");
+		TQ_CORE_INFO("  Vendor : {0}", (const char*)glGetString(GL_VENDOR));
+		TQ_CORE_INFO("  Renderer : {0}", (const char*)glGetString(GL_RENDERER));
+		TQ_CORE_INFO("  Version : {0}", (const char*)glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers() {
