@@ -162,6 +162,7 @@
     <ClInclude Include="src\tiny_quality\Log.h" />
     <ClInclude Include="src\tiny_quality\MouseButtonCodes.h" />
     <ClInclude Include="src\tiny_quality\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\tiny_quality\Renderer\Shader.h" />
     <ClInclude Include="src\tiny_quality\Window.h" />
     <ClInclude Include="src\tqpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -593,6 +594,7 @@
     <ClCompile Include="src\tiny_quality\Layer.cpp" />
     <ClCompile Include="src\tiny_quality\LayerStack.cpp" />
     <ClCompile Include="src\tiny_quality\Log.cpp" />
+    <ClCompile Include="src\tiny_quality\Renderer\Shader.cpp" />
     <ClCompile Include="src\tqpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
