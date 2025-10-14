@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -161,7 +162,9 @@
     <ClInclude Include="src\tiny_quality\LayerStack.h" />
     <ClInclude Include="src\tiny_quality\Log.h" />
     <ClInclude Include="src\tiny_quality\MouseButtonCodes.h" />
+    <ClInclude Include="src\tiny_quality\Renderer\Buffer.h" />
     <ClInclude Include="src\tiny_quality\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\tiny_quality\Renderer\Renderer.h" />
     <ClInclude Include="src\tiny_quality\Renderer\Shader.h" />
     <ClInclude Include="src\tiny_quality\Window.h" />
     <ClInclude Include="src\tqpch.h" />
@@ -585,6 +588,7 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
@@ -594,6 +598,8 @@
     <ClCompile Include="src\tiny_quality\Layer.cpp" />
     <ClCompile Include="src\tiny_quality\LayerStack.cpp" />
     <ClCompile Include="src\tiny_quality\Log.cpp" />
+    <ClCompile Include="src\tiny_quality\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\tiny_quality\Renderer\Renderer.cpp" />
     <ClCompile Include="src\tiny_quality\Renderer\Shader.cpp" />
     <ClCompile Include="src\tqpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
