@@ -3,7 +3,7 @@
 
 #include "tiny_quality/Log.h"
 
-#include <glad/glad.h>
+#include "tiny_quality/Renderer/Renderer.h"
 
 #include "Input.h"
 
@@ -45,6 +45,8 @@ namespace tiny_quality {
 		std::shared_ptr<IndexBuffer> indexBuffer;
 		indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
+
+		m_squareVA.reset(VertexArray::Create());
 
 		float squareVertices[3 * 4] = {
 			-0.75f, -0.75f, 0.0f,
@@ -155,16 +157,19 @@ namespace tiny_quality {
 	void Application::Run() {
 		
 		while (m_Runing) {
-			glClearColor(0.1f, 0.1f, 0.1f, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+
+			RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
 
 			m_BlueShader->Bind();
-			m_squareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_squareVA->GetIndexBuffers()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_squareVA);
 
 			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffers()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_VertexArray);
+
+			Renderer::EndScene();
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
