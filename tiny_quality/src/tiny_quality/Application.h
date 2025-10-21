@@ -13,6 +13,9 @@
 #include "tiny_quality/Renderer/Buffer.h"
 #include "tiny_quality/Renderer/VertexArray.h"
 
+#include "tiny_quality/Renderer/OrthographicCamera.h"
+
+
 namespace tiny_quality {
 
 	class TINY_QUALITY_API Application
@@ -43,6 +46,8 @@ namespace tiny_quality {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_squareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
