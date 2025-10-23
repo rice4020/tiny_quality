@@ -9,16 +9,10 @@
 
 #include "tiny_quality/ImGui/ImGuiLayer.h"
 
-#include "tiny_quality/Renderer/Shader.h"
-#include "tiny_quality/Renderer/Buffer.h"
-#include "tiny_quality/Renderer/VertexArray.h"
-
-#include "tiny_quality/Renderer/OrthographicCamera.h"
-
 
 namespace tiny_quality {
 
-	class TINY_QUALITY_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -40,14 +34,7 @@ namespace tiny_quality {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Runing = true;
 		LayerStack m_LayerStack;
-		
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
 
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_squareVA;
-
-		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

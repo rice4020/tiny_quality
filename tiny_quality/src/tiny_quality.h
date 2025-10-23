@@ -12,6 +12,18 @@
 
 #include "tiny_quality/ImGui/ImGuiLayer.h"
 
+// ---- Renderer -------------------
+
+#include "tiny_quality/Renderer/Renderer.h"
+#include "tiny_quality/Renderer/RenderCommand.h"
+
+#include "tiny_quality/Renderer/Buffer.h"
+#include "tiny_quality/Renderer/Shader.h"
+#include "tiny_quality/Renderer/VertexArray.h"
+
+#include "tiny_quality/Renderer/OrthographicCamera.h"
+// ---------------------------------
+
 // ---- Entry Point ----------------
 #include "tiny_quality/EntryPoint.h"
 // ---------------------------------
