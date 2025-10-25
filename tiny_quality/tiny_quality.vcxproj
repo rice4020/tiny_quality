@@ -152,6 +152,7 @@
     <ClInclude Include="src\tiny_quality.h" />
     <ClInclude Include="src\tiny_quality\Application.h" />
     <ClInclude Include="src\tiny_quality\Core.h" />
+    <ClInclude Include="src\tiny_quality\Core\Timestep.h" />
     <ClInclude Include="src\tiny_quality\EntryPoint.h" />
     <ClInclude Include="src\tiny_quality\Events\ApplicationEvent.h" />
     <ClInclude Include="src\tiny_quality\Events\Event.h" />

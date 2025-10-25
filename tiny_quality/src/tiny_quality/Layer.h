@@ -1,7 +1,9 @@
 #pragma once
 
 #include "tiny_quality/Core.h"
+#include "tiny_quality/Core/Timestep.h"
 #include "tiny_quality/Events/Event.h"
+
 
 namespace tiny_quality {
 
@@ -13,7 +15,7 @@ namespace tiny_quality {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

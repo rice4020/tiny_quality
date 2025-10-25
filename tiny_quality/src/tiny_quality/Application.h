@@ -7,6 +7,8 @@
 #include "tiny_quality/Events/Event.h"
 #include "tiny_quality/Events/ApplicationEvent.h"
 
+#include "tiny_quality/Core/Timestep.h"
+
 #include "tiny_quality/ImGui/ImGuiLayer.h"
 
 
@@ -30,11 +32,12 @@ namespace tiny_quality {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Runing = true;
 		LayerStack m_LayerStack;
-
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

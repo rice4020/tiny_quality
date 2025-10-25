@@ -6,6 +6,8 @@
 #include "tiny_quality/Layer.h"
 #include "tiny_quality/Log.h"
 
+#include "tiny_quality/Core/Timestep.h"
+
 #include "tiny_quality/Input.h"
 #include "tiny_quality/KeyCodes.h"
 #include "tiny_quality/MouseButtonCodes.h"
