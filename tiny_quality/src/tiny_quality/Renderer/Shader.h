@@ -15,6 +15,7 @@ namespace tiny_quality {
 		void Bind() const;
 		void UnBind() const;
 
+		void UploadUniformFloat4(const std::string& name, const glm::vec4& values);
 		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 
 	};

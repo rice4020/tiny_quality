@@ -121,9 +121,14 @@ namespace tiny_quality {
 		glUseProgram(0);
 	}
 
+	void Shader::UploadUniformFloat4(const std::string& name, const glm::vec4& values) {
+		GLuint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform4f(location, values.x, values.y, values.z, values.w);
+	}
+
 	void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix) {
 		GLuint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
-
+	
 }
