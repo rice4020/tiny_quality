@@ -10,11 +10,11 @@
 class ExampleLayer : public tiny_quality::Layer
 {
 private:
-	std::shared_ptr<tiny_quality::Shader> m_Shader;
-	std::shared_ptr<tiny_quality::VertexArray> m_VertexArray;
+	tiny_quality::Ref<tiny_quality::Shader> m_Shader;
+	tiny_quality::Ref<tiny_quality::VertexArray> m_VertexArray;
 
-	std::shared_ptr<tiny_quality::Shader> m_FlatColorShader;
-	std::shared_ptr<tiny_quality::VertexArray> m_squareVA;
+	tiny_quality::Ref<tiny_quality::Shader> m_FlatColorShader;
+	tiny_quality::Ref<tiny_quality::VertexArray> m_squareVA;
 
 	tiny_quality::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
@@ -35,7 +35,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<tiny_quality::VertexBuffer> vertexBuffer;
+		tiny_quality::Ref<tiny_quality::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(tiny_quality::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		tiny_quality::BufferLayout layout = {
@@ -46,7 +46,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0,1,2 };
-		std::shared_ptr<tiny_quality::IndexBuffer> indexBuffer;
+		tiny_quality::Ref<tiny_quality::IndexBuffer> indexBuffer;
 		indexBuffer.reset(tiny_quality::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -59,7 +59,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<tiny_quality::VertexBuffer> squareVB;
+		tiny_quality::Ref<tiny_quality::VertexBuffer> squareVB;
 		squareVB.reset(tiny_quality::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		squareVB->SetLayout({
@@ -68,7 +68,7 @@ public:
 		m_squareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<tiny_quality::IndexBuffer> squareIB;
+		tiny_quality::Ref<tiny_quality::IndexBuffer> squareIB;
 		squareIB.reset(tiny_quality::IndexBuffer::Create(squareIndices, sizeof(squareIndices)));
 		m_squareVA->SetIndexBuffer(squareIB);
 
