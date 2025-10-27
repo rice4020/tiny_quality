@@ -21,6 +21,7 @@
 
 #include "tiny_quality/Renderer/Buffer.h"
 #include "tiny_quality/Renderer/Shader.h"
+#include "tiny_quality/Renderer/Texture.h"
 #include "tiny_quality/Renderer/VertexArray.h"
 
 #include "tiny_quality/Renderer/OrthographicCamera.h"
