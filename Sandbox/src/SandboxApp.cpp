@@ -10,10 +10,11 @@
 class ExampleLayer : public tiny_quality::Layer
 {
 private:
+	tiny_quality::ShaderLibrary m_ShaderLirary;
 	tiny_quality::Ref<tiny_quality::Shader> m_Shader;
 	tiny_quality::Ref<tiny_quality::VertexArray> m_VertexArray;
 
-	tiny_quality::Ref<tiny_quality::Shader> m_FlatColorShader, m_TextureShader;
+	tiny_quality::Ref<tiny_quality::Shader> m_FlatColorShader;
 	tiny_quality::Ref<tiny_quality::VertexArray> m_squareVA;
 
 	tiny_quality::Ref<tiny_quality::Texture2D> m_Texture, m_ChernoLogoTexture;
@@ -109,7 +110,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(tiny_quality::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = tiny_quality::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -141,15 +142,15 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(tiny_quality::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = tiny_quality::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(tiny_quality::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLirary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = tiny_quality::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_ChernoLogoTexture = tiny_quality::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(tiny_quality::Timestep ts) override
@@ -195,10 +196,12 @@ public:
 			}
 		}
 
-		//m_Texture->Bind();
-		//tiny_quality::Renderer::Submit(m_TextureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-		//m_ChernoLogoTexture->Bind();
-		//tiny_quality::Renderer::Submit(m_TextureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		auto textureShader = m_ShaderLirary.Get("Texture");
+
+		m_Texture->Bind();
+		tiny_quality::Renderer::Submit(textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_ChernoLogoTexture->Bind();
+		tiny_quality::Renderer::Submit(textureShader, m_squareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// triangle
 		//tiny_quality::Renderer::Submit(m_Shader, m_VertexArray);
