@@ -167,6 +167,7 @@
     <ClInclude Include="src\tiny_quality\LayerStack.h" />
     <ClInclude Include="src\tiny_quality\Log.h" />
     <ClInclude Include="src\tiny_quality\MouseButtonCodes.h" />
+    <ClInclude Include="src\tiny_quality\OrthographicCameraController.h" />
     <ClInclude Include="src\tiny_quality\Renderer\Buffer.h" />
     <ClInclude Include="src\tiny_quality\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\tiny_quality\Renderer\OrthographicCamera.h" />
@@ -613,6 +614,7 @@
     <ClCompile Include="src\tiny_quality\Layer.cpp" />
     <ClCompile Include="src\tiny_quality\LayerStack.cpp" />
     <ClCompile Include="src\tiny_quality\Log.cpp" />
+    <ClCompile Include="src\tiny_quality\OrthographicCameraController.cpp" />
     <ClCompile Include="src\tiny_quality\Renderer\Buffer.cpp" />
     <ClCompile Include="src\tiny_quality\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\tiny_quality\Renderer\RenderCommand.cpp" />

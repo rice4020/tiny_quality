@@ -19,16 +19,12 @@ private:
 
 	tiny_quality::Ref<tiny_quality::Texture2D> m_Texture, m_ChernoLogoTexture;
 
-	tiny_quality::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
-
+	tiny_quality::OrthographicCameraController m_CameraController;
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
+
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f/720.0f)
 	{
 		m_VertexArray.reset(tiny_quality::VertexArray::Create());
 
@@ -155,42 +151,21 @@ public:
 
 	void OnUpdate(tiny_quality::Timestep ts) override
 	{
+		m_CameraController.OnUpdate(ts);
 
-		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_LEFT)) {
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		}
-		else if (tiny_quality::Input::IsKeyPressed(TQ_KEY_RIGHT)) {
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-		}
-		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_UP)) {
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		}
-		else if (tiny_quality::Input::IsKeyPressed(TQ_KEY_DOWN)) {
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		}
-
-		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_A)) {
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		}
-		if (tiny_quality::Input::IsKeyPressed(TQ_KEY_D)) {
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		}
 		tiny_quality::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		tiny_quality::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		tiny_quality::Renderer::BeginScene(m_Camera);
+		tiny_quality::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
 		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(m_FlatColorShader)->Bind();
 		std::dynamic_pointer_cast<tiny_quality::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
 
-		for(int y = 0; y<20; y++) {
+		for (int y = 0; y < 20; y++) {
 			for (int x = 0; x < 20; x++) {
-				glm::vec3 pos(x * 0.11f, y * 0.11f , 0.0f);
+				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
 				tiny_quality::Renderer::Submit(m_FlatColorShader, m_squareVA, transform);
 			}
@@ -215,8 +190,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(tiny_quality::Event& event) override
+	void OnEvent(tiny_quality::Event& e) override
 	{
+		m_CameraController.OnEvent(e);
 	}
 };
 
@@ -225,7 +201,7 @@ public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
 	}
-	
+
 	~Sandbox() {
 
 	}
