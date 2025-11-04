@@ -193,6 +193,7 @@ public:
 	void OnEvent(tiny_quality::Event& e) override
 	{
 		m_CameraController.OnEvent(e);
+
 	}
 };
 
