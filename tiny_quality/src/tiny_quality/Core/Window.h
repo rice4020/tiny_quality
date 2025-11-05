@@ -2,7 +2,7 @@
 
 #include "tqpch.h"
 
-#include "tiny_quality/Core.h"
+#include "tiny_quality/Core/Core.h"
 #include "tiny_quality/Events/Event.h"
 
 namespace tiny_quality {

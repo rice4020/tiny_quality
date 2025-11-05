@@ -81,17 +81,38 @@
     <ClInclude Include="src\tiny_quality.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\tiny_quality\Application.h">
-      <Filter>src\tiny_quality</Filter>
+    <ClInclude Include="src\tiny_quality\Core\Application.h">
+      <Filter>src\tiny_quality\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\tiny_quality\Core.h">
-      <Filter>src\tiny_quality</Filter>
+    <ClInclude Include="src\tiny_quality\Core\Core.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\EntryPoint.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\Input.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\KeyCodes.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\Layer.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\LayerStack.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\Log.h">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Core\MouseButtonCodes.h">
+      <Filter>src\tiny_quality\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Core\Timestep.h">
       <Filter>src\tiny_quality\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\tiny_quality\EntryPoint.h">
-      <Filter>src\tiny_quality</Filter>
+    <ClInclude Include="src\tiny_quality\Core\Window.h">
+      <Filter>src\tiny_quality\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Events\ApplicationEvent.h">
       <Filter>src\tiny_quality\Events</Filter>
@@ -108,24 +129,6 @@
     <ClInclude Include="src\tiny_quality\ImGui\ImGuiLayer.h">
       <Filter>src\tiny_quality\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\tiny_quality\Input.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\KeyCodes.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\Layer.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\LayerStack.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\Log.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\MouseButtonCodes.h">
-      <Filter>src\tiny_quality</Filter>
-    </ClInclude>
     <ClInclude Include="src\tiny_quality\Renderer\Buffer.h">
       <Filter>src\tiny_quality\Renderer</Filter>
     </ClInclude>
@@ -133,6 +136,9 @@
       <Filter>src\tiny_quality\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Renderer\OrthographicCamera.h">
+      <Filter>src\tiny_quality\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tiny_quality\Renderer\OrthographicCameraController.h">
       <Filter>src\tiny_quality\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Renderer\RenderCommand.h">
@@ -152,9 +158,6 @@
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Renderer\VertexArray.h">
       <Filter>src\tiny_quality\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tiny_quality\Window.h">
-      <Filter>src\tiny_quality</Filter>
     </ClInclude>
     <ClInclude Include="src\tqpch.h">
       <Filter>src</Filter>
@@ -1416,7 +1419,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\tiny_quality\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1443,8 +1445,17 @@
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\tiny_quality\Application.cpp">
-      <Filter>src\tiny_quality</Filter>
+    <ClCompile Include="src\tiny_quality\Core\Application.cpp">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\Core\Layer.cpp">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\Core\LayerStack.cpp">
+      <Filter>src\tiny_quality\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\Core\Log.cpp">
+      <Filter>src\tiny_quality\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\tiny_quality\ImGui\ImGuiBuild.cpp">
       <Filter>src\tiny_quality\ImGui</Filter>
@@ -1452,19 +1463,13 @@
     <ClCompile Include="src\tiny_quality\ImGui\ImGuiLayer.cpp">
       <Filter>src\tiny_quality\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\tiny_quality\Layer.cpp">
-      <Filter>src\tiny_quality</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tiny_quality\LayerStack.cpp">
-      <Filter>src\tiny_quality</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tiny_quality\Log.cpp">
-      <Filter>src\tiny_quality</Filter>
-    </ClCompile>
     <ClCompile Include="src\tiny_quality\Renderer\Buffer.cpp">
       <Filter>src\tiny_quality\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\tiny_quality\Renderer\OrthographicCamera.cpp">
+      <Filter>src\tiny_quality\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tiny_quality\Renderer\OrthographicCameraController.cpp">
       <Filter>src\tiny_quality\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\tiny_quality\Renderer\RenderCommand.cpp">
@@ -1491,6 +1496,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\tiny_quality\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 #include "tqpch.h"
 #include "OrthographicCameraController.h"
 
-#include "tiny_quality/Input.h"
-#include "tiny_quality/KeyCodes.h"
+#include "tiny_quality/Core/Input.h"
+#include "tiny_quality/Core/KeyCodes.h"
 
 namespace tiny_quality {
 

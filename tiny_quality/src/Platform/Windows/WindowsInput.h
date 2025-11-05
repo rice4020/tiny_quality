@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tiny_quality/Input.h"
+#include "tiny_quality/Core/Input.h"
 
 namespace tiny_quality {
 

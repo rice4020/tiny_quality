@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tiny_quality/Layer.h"
+#include "tiny_quality/Core/Layer.h"
 
 #include "tiny_quality/Events/ApplicationEvent.h"
 #include "tiny_quality/Events/KeyEvent.h"

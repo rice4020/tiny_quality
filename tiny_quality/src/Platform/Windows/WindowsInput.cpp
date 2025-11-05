@@ -1,7 +1,7 @@
 #include "tqpch.h"
 #include "WindowsInput.h"
 
-#include "tiny_quality/Application.h"
+#include "tiny_quality/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace tiny_quality {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tiny_quality/Window.h"
+#include "tiny_quality/Core/Window.h"
 #include "tiny_quality/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "tiny_quality/Log.h"
+#include "tiny_quality/Core/Log.h"
 
 #ifdef TQ_PLATFORM_WINDOWS
 	#include <Windows.h>

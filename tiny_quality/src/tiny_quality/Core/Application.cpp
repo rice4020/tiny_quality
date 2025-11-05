@@ -1,7 +1,7 @@
 #include "tqpch.h"
 #include "Application.h"
 
-#include "tiny_quality/Log.h"
+#include "tiny_quality/Core/Log.h"
 
 #include "tiny_quality/Renderer/Renderer.h"
 

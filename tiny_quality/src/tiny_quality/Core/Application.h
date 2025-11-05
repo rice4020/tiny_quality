@@ -3,7 +3,7 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "tiny_quality/LayerStack.h"
+#include "tiny_quality/Core/LayerStack.h"
 #include "tiny_quality/Events/Event.h"
 #include "tiny_quality/Events/ApplicationEvent.h"
 
