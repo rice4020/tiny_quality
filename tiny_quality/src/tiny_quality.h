@@ -28,7 +28,3 @@
 
 #include "tiny_quality/Renderer/OrthographicCamera.h"
 // ---------------------------------
-
-// ---- Entry Point ----------------
-#include "tiny_quality/Core/EntryPoint.h"
-// ---------------------------------
