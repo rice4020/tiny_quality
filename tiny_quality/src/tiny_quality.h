@@ -19,6 +19,7 @@
 // ---- Renderer -------------------
 
 #include "tiny_quality/Renderer/Renderer.h"
+#include "tiny_quality/Renderer/Renderer2D.h"
 #include "tiny_quality/Renderer/RenderCommand.h"
 
 #include "tiny_quality/Renderer/Buffer.h"
