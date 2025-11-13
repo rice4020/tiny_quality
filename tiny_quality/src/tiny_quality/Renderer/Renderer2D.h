@@ -2,6 +2,8 @@
 
 #include "OrthographicCamera.h"
 
+#include "Texture.h"
+
 namespace tiny_quality {
 
 	class Renderer2D {
@@ -14,6 +16,8 @@ namespace tiny_quality {
 
 		static void DrowQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
 		static void DrowQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+		static void DrowQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture);
+		static void DrowQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture);
 
 	};
 

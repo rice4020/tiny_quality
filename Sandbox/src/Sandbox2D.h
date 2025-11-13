@@ -9,6 +9,8 @@ private:
 	tiny_quality::Ref<tiny_quality::VertexArray> m_SquareVA;
 	tiny_quality::Ref<tiny_quality::Shader> m_FlatColorShader;
 
+	tiny_quality::Ref<tiny_quality::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
 public:
