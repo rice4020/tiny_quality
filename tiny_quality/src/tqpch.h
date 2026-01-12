@@ -15,6 +15,8 @@
 
 #include "tiny_quality/Core/Log.h"
 
+#include "tiny_quality/Core/Debug/instrumentor.h"
+
 #ifdef TQ_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

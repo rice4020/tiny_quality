@@ -154,6 +154,7 @@
     <ClInclude Include="src\tiny_quality.h" />
     <ClInclude Include="src\tiny_quality\Core\Application.h" />
     <ClInclude Include="src\tiny_quality\Core\Core.h" />
+    <ClInclude Include="src\tiny_quality\Core\Debug\instrumentor.h" />
     <ClInclude Include="src\tiny_quality\Core\EntryPoint.h" />
     <ClInclude Include="src\tiny_quality\Core\Input.h" />
     <ClInclude Include="src\tiny_quality\Core\KeyCodes.h" />
