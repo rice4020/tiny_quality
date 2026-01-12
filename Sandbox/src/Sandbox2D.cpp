@@ -11,21 +11,20 @@ Sandbox2D::Sandbox2D()
 
 
 void Sandbox2D::OnAttach() {
+	TQ_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = tiny_quality::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach() {
-
+	TQ_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(tiny_quality::Timestep ts) {
 
 	TQ_PROFILE_FUNCTION();
 	//update
-	{
-		TQ_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	//render
 	{

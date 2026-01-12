@@ -1420,7 +1420,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\tiny_quality\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\tiny_quality\Core\Debug\instrumentor.h" />
+    <ClInclude Include="src\tiny_quality\Debug\instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">

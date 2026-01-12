@@ -9,6 +9,8 @@ namespace tiny_quality {
 		static RendererAPI* s_RendererAPI;
 	public:
 		inline static void Init() {
+			TQ_PROFILE_FUNCTION();
+
 			s_RendererAPI->Init();
 		}
 
