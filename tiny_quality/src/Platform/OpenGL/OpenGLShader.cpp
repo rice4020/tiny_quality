@@ -180,6 +180,12 @@ namespace tiny_quality {
 		UploadUniformInt(name, value);
 	}
 
+	void OpenGLShader::SetFloat(const std::string& name, float value) {
+		TQ_PROFILE_FUNCTION();
+
+		UploadUniformFloat(name, value);
+	}
+
 	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value) {
 		TQ_PROFILE_FUNCTION();
 
